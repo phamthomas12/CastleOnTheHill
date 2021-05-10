@@ -21,12 +21,12 @@ function Books() {
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
 
-  // Load all books and store them with setBooks
+  // Load all bookings and store them with setBooks
   useEffect(() => {
     loadBooks()
   }, [])
 
-  // Loads all books and sets them to books
+  // Loads all bookings and sets them to books
   function loadBooks() {
     API.getBooks()
       .then(res => 
@@ -35,7 +35,7 @@ function Books() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a booking from the database with a given id, then reloads books from the db
   function deleteBook(id) {
     API.deleteBook(id)
       .then(res => loadBooks())
@@ -48,8 +48,8 @@ function Books() {
     setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
+  // When the form is submitted, use the API.saveBook method to save the booking data
+  // Then reload bookings from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
