@@ -1,14 +1,13 @@
 {
-  "name": "castleonthehill",
+  "name": "mern",
   "version": "0.1.0",
-  "description": "CastleOnTheHill",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "@craco/craco": "^6.1.1",
+    "axios": "^0.18.0",
     "react": "^16.13.1",
-    "react-router-dom": "^5.2.0",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -17,22 +16,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.0",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
