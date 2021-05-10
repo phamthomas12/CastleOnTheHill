@@ -15,6 +15,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import mainimg from "../img/main.jpg"
 import kitchen from "../img/kitchen.jpg"
 import backyard from "../img/backyard.jpg"
+import green from "../img/green.jpg"
 
 function Books() {
   // Setting our component's initial state
@@ -76,6 +77,11 @@ function Books() {
     {
       src: backyard,
       altText: 'Backyard View',
+
+    },
+    {
+      src: green,
+      altText: 'Golf View',
 
     }
   ];
