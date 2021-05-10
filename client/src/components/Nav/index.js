@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import { NavItem } from "reactstrap";
 import "./style.css";
 
 function Nav() {
@@ -7,6 +9,14 @@ function Nav() {
       <a className="navbar-brand" href="/">
         Castle On The Hill
       </a>
+      <NavItem>
+        <NavLink tag={Link} to="/signin">Sign In</NavLink>
+      </NavItem>
+
+      <NavItem>
+        <NavLink tag={Link} to="/signup">Sign Up</NavLink>
+      </NavItem>
+      
     </nav>
   );
 }

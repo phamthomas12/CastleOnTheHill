@@ -4,6 +4,8 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -11,6 +13,12 @@ function App() {
       <div>
         <Nav />
         <Switch>
+        <Route exact path={["./Signin"]}>
+            <Signin />
+          </Route>
+          <Route exact path={["./Signup"]}>
+            <Signup />
+          </Route>
           <Route exact path={["/", "/books"]}>
             <Books />
           </Route>

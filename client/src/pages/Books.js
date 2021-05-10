@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import mainimg from "../img/main.jpg"
+import kitchen from "../img/kitchen.jpg"
+import backyard from "../img/backyard.jpg"
 
 function Books() {
   // Setting our component's initial state
@@ -52,12 +62,72 @@ function Books() {
         .catch(err => console.log(err));
     }
   };
+  const items = [
+    {
+      src: mainimg,
+      altText: 'Front View',
+      
+    },
+    {
+      src: kitchen,
+      altText: 'Kitchen View',
+
+    },
+    {
+      src: backyard,
+      altText: 'Backyard View',
+
+    }
+  ];
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+  
+    const next = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const previous = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const goToIndex = (newIndex) => {
+      if (animating) return;
+      setActiveIndex(newIndex);
+    }
+  
+    const slides = items.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={() => setAnimating(true)}
+          onExited={() => setAnimating(false)}
+          key={item.src}
+        >
+          <img src={item.src} alt={item.altText} />
+          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
 
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-          
+          <Col size="md-5">
+          <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      {slides}
+      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+    </Carousel>
+  
             <form>
               <Input
                 onChange={handleInputChange}
