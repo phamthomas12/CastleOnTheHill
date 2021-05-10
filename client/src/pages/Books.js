@@ -67,7 +67,7 @@ function Books() {
               <Input
                 onChange={handleInputChange}
                 name="author"
-                placeholder="How Many People? (required)"
+                placeholder="How Many People? (Required)"
               />
               <TextArea
                 onChange={handleInputChange}
@@ -89,7 +89,7 @@ function Books() {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        Booking Request by {book.title} for {book.author} between the {book.synopsis}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />

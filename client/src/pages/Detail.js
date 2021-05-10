@@ -22,24 +22,26 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {book.title} by {book.author}
+             Pending Booking Request by {book.title} for {book.author} between the {book.synopsis}
               </h1>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-12 md-offset-1">
+          <Jumbotron>
             <article>
-              <h1>Synopsis</h1>
+              <h3>Booking Request Dates</h3>
               <p>
                 {book.synopsis}
               </p>
             </article>
+            </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Booking Page</Link>
           </Col>
         </Row>
       </Container>
