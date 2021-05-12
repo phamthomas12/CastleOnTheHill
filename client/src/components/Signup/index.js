@@ -77,10 +77,6 @@ function SignUp() {
           </Header>
             <Form size='large'>
             <Segment stacked>
-            <Form.Input label="Upload Profile Picture" 
-                        type="file" 
-                        onChange={(e)=>setImage(e.target.files[0])}/>
-
             <Form.Input label="Full Name" type="text"  
                         value={name}
                         onChange={(e) => setName(e.target.value)} 

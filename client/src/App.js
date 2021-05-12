@@ -8,7 +8,6 @@ import FavoritesList from "./pages/FavoritesList";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignupPage";
 import Dashboard from "./pages/Dashboard";
-import CreatePostForm from "./components/CreatePost";
 import NavBar from "./components/NavBar";
 import { UserContext } from "./utils/UserContext";
 import ManagePost from "./pages/ManagePost";
@@ -31,7 +30,6 @@ function App() {
             <Route exact path="/managePost" component={ManagePost} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
-            <Route exact path="/create-post" component={CreatePostForm}/>
              {/* <Route component={NoMatch} />  */}
             <Route
               // {...rest}
