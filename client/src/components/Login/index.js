@@ -11,7 +11,6 @@ import {
   import axios from "axios";
   import "./style.css";
   import { useHistory } from "react-router-dom";
-  import logo from "../../assets/images/logo.png";
   import {UserContext} from "../../utils/UserContext";
 
 
@@ -39,7 +38,6 @@ function Login() {
 <Grid className="login-container" textAlign="center" verticalAlign="middle"  >
 <Grid.Column style={{ maxWidth: 450 }}>
   <Header as="h2" color="teal" textAlign="center">
-    <Image src={logo} size="huge" alt="logo" className="image" />{" "}
     Log-in to your account
   </Header>
   <Form size="large" onSubmit={handleSubmit}>
@@ -65,7 +63,7 @@ function Login() {
     </Segment>
   </Form>
   <Message>
-    New to us? <a href="#root">Sign Up</a>
+    New to Booking? <a href="#root">Sign Up</a>
   </Message>
 </Grid.Column>
 </Grid>

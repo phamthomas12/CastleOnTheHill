@@ -69,7 +69,7 @@ function SignUp() {
     }
 
     return (
-      <Grid textAlign='center' style={{ height: '150vh'}} verticalAlign='middle'>
+      <Grid textAlign='center' style={{ height: '130vh'}} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='teal' textAlign='center'>
             {/* <Image src='/logo.png' /> Log-in to your account */}
