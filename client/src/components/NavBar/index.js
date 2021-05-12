@@ -29,9 +29,6 @@ function NavBar() {
     const renderLoggin = () => {
         return (
             <>
-                <Button as="a" inverted>
-                    <Link to="/login">Log in</Link>
-                </Button>
                 <Button as="a" inverted
                     style={
                         {marginLeft: "0.5em"}

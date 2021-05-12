@@ -3,10 +3,11 @@ import {
     Button,
     Container,
     Header,
-    Message
+    Message,
   } from "semantic-ui-react";
   import House from "../../assets/images/main.jpg";
 import "./style.css";
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,9 +24,11 @@ function HeaderImage() {
             
               Come and Book the Phamily House
             </p>
+            <Link to="/login">
             <Button size="large" primary >
-             Login to create post &raquo;
+             Login To Start Booking
             </Button>
+            </Link>
           </Container>
 		  
         </Message>
