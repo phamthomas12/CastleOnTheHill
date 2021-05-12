@@ -1,0 +1,11 @@
+.ui.borderless.inverted.menu {
+    background-color: black;
+    border-radius: 4px;
+    flex-wrap: wrap;
+    padding-left: 4rem;
+  }
+  
+  .ui.borderless.inverted.menu .active.item {
+    background-color: black;
+  }
+  
