@@ -27,6 +27,7 @@ function App() {
             <Route exact path="/managePost" component={ManagePost} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
+            
 
              {/* <Route component={NoMatch} />  */}
             <Route

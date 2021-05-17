@@ -3,10 +3,8 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import {Container , Header, Form, Button} from "semantic-ui-react";
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { QuillFormats, QuillModules } from "../Common/quill";
-import DashboardLayout from "../DashboardLayout";
+
 
 
 
@@ -40,32 +38,26 @@ function CreatePostForm() {
   };
 
   return (
-    <DashboardLayout>
+    
     <Container>
-     <Header as="h2">Create a blog's blog</Header>
+     <Header as="h2">Request a Booking Date</Header>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-        <label>Post Title</label>
-        <input className="form-control mb-5" required ref={titleRef} placeholder="Title" />
+        <input className="form-control mb-5" required ref={titleRef} placeholder="Date Request" />
         </Form.Field>
-       
-        <ReactQuill modules={QuillModules}
-                    formats={QuillFormats}
-                    required 
-                    ref={bodyRef} 
-                    style={{height:"150px"}}
-                    placeholder="Write something amazing..." />
-
-        <Form.Field style={{marginTop: "5rem"}}>
-          <label>Posted By</label>
-        <input  ref={authorRef} placeholder="Screen name" />
+        <Form.Field>
+        <input className="form-control mb-5" required ref={bodyRef} placeholder="Date Request" />
+        </Form.Field>
+        <Form.Field>
+          <label>Booking Name</label>
+        <input  ref={authorRef} placeholder="Booking Name" />
         </Form.Field>
         <Button className="btn btn-success mt-3 mb-5"  type="submit" disabled={state.loading}>
-          Save Post
+          Request Booking
         </Button>
       </Form>
     </Container>
-    </DashboardLayout>
+
   );
 }
 
