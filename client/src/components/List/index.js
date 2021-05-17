@@ -23,13 +23,10 @@ export function ListItem(props) {
     <Link to={"/posts/" + props.id}>
       <Item.Header style={{fontSize: "24px"}}as="a">{props.postTitle}</Item.Header>
       </Link>
-      <Item.Meta><Moment format="DD-MM-YYYY">
-      {props.date}
-            </Moment></Item.Meta>
       <Item.Description>
         {props.body}
       </Item.Description>
-      <Item.Extra>posted by {props.author}</Item.Extra>
+      <Item.Extra>Requested By {props.author}</Item.Extra>
     </Item.Content>
   </Item>
   )

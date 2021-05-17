@@ -10,6 +10,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
 import DeleteBtn from "../components/DeleteButton";
 import CreatePost from "../components/CreatePost";
+import PostsList from "../components/PostList";
 import { List, ListItem } from "../components/List";
 import {
   Carousel,
@@ -95,7 +96,10 @@ const Dashboard = () => {
           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
         </Carousel>
         <CreatePost></CreatePost>
-            </Col> 
+            </Col>
+        <Col size= "md-5" >
+        <PostsList />
+        </Col>
         </Row>
       </Container>
     )

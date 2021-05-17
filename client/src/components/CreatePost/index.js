@@ -3,7 +3,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import {Container , Header, Form, Button} from "semantic-ui-react";
-import 'react-quill/dist/quill.snow.css';
+
 
 
 
@@ -19,7 +19,7 @@ function CreatePostForm() {
     dispatch({ type: LOADING });
     API.savePost({
       title: titleRef.current.value,
-      body: bodyRef.current.editor.getText(),
+      body: bodyRef.current.value,
       author: authorRef.current.value
     })
       .then(result => {
@@ -30,7 +30,7 @@ function CreatePostForm() {
       })
       .catch(err => console.log(err));
     console.log(titleRef.current.value);
-    console.log(bodyRef.current.editor.getText());
+    console.log(bodyRef.current.value);
     console.log(authorRef.current.value);
     titleRef.current.value = "";
     bodyRef.current.value = "";
@@ -46,7 +46,7 @@ function CreatePostForm() {
         <input className="form-control mb-5" required ref={titleRef} placeholder="Date Request" />
         </Form.Field>
         <Form.Field>
-        <input className="form-control mb-5" required ref={bodyRef} placeholder="Date Request" />
+        <input className="form-control mb-5" required ref={bodyRef} placeholder="Number of People" />
         </Form.Field>
         <Form.Field>
           <label>Booking Name</label>
