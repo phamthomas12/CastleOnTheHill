@@ -1,6 +1,5 @@
 import React from "react";
 import {Item } from "semantic-ui-react";
-import {Link} from "react-router-dom";
 
 
 // This file exports both the List and ListItem components
@@ -19,9 +18,7 @@ export function ListItem(props) {
     {/* <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' /> */}
 
     <Item.Content>
-    <Link to={"/posts/" + props.id}>
-      <Item.Header style={{fontSize: "24px"}}as="a">{props.postTitle}</Item.Header>
-      </Link>
+      <Item.Header style={{fontSize: "24px"}}>{props.postTitle}</Item.Header>
       <Item.Description>
         {props.body} People
       </Item.Description>
