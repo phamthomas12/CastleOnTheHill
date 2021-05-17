@@ -67,7 +67,7 @@ function PostsList() {
           ))}
         </List>
       ) : (
-        <h3>No Booking Requests Yet, Be the First</h3>
+        <h3>No Booking Requests Yet, Be The First</h3>
       )}
     </div>
   );

@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, Item } from "semantic-ui-react";
-import Moment from "react-moment";
+import {Item } from "semantic-ui-react";
 import {Link} from "react-router-dom";
 
 
@@ -24,7 +23,7 @@ export function ListItem(props) {
       <Item.Header style={{fontSize: "24px"}}as="a">{props.postTitle}</Item.Header>
       </Link>
       <Item.Description>
-        {props.body}
+        {props.body} People
       </Item.Description>
       <Item.Extra>Requested By {props.author}</Item.Extra>
     </Item.Content>

@@ -5,8 +5,7 @@ import {
     Grid,
     Header,
     Message,
-    Segment,
-    Image
+    Segment
   } from "semantic-ui-react";
   import axios from "axios";
   import "./style.css";
@@ -63,7 +62,7 @@ function Login() {
     </Segment>
   </Form>
   <Message>
-    New to Booking? <a href="#root">Sign Up</a>
+    New to Booking? <a href="/signup">Sign Up</a>
   </Message>
 </Grid.Column>
 </Grid>

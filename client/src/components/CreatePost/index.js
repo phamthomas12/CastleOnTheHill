@@ -43,14 +43,14 @@ function CreatePostForm() {
      <Header as="h2">Request a Booking Date</Header>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-        <input className="form-control mb-5" required ref={titleRef} placeholder="Date Request" />
+        <input className="form-control mb-5" required ref={titleRef} placeholder="Date Request (e.g. 01/01/2021-4/01/2021)" />
         </Form.Field>
         <Form.Field>
-        <input className="form-control mb-5" required ref={bodyRef} placeholder="Number of People" />
+        <input className="form-control mb-5" required ref={bodyRef} placeholder="Number of People (e.g. 7)" />
         </Form.Field>
         <Form.Field>
           <label>Booking Name</label>
-        <input  ref={authorRef} placeholder="Booking Name" />
+        <input  ref={authorRef} placeholder="Booking Full Name (e.g. John Smith)" />
         </Form.Field>
         <Button className="btn btn-success mt-3 mb-5"  type="submit" disabled={state.loading}>
           Request Booking
