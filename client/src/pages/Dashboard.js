@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 import NavBar from "../components/NavBar";
 import ProfileTop from "../components/Profile/ProfileTop"
 import axios from "axios";
+import API from "../utils/API";
 import DashboardLayout from "../components/DashboardLayout";
+import { Input, TextArea, FormBtn } from "../components/Form";
 import {
   Carousel,
   CarouselItem,
@@ -16,6 +18,7 @@ import mainimg from "../assets/images/main1.jpg";
 import kitchen from "../assets/images/kitchen.jpg";
 import backyard from "../assets/images/backyard.jpg";
 import green from "../assets/images/green.jpg";
+
 
 const Dashboard = () => {
     const [name, setUserName] = useState();
@@ -38,6 +41,45 @@ const Dashboard = () => {
         })
         .catch((err) => console.log(err));
     }
+    const [books, setBooks] = useState([])
+    const [formObject, setFormObject] = useState({})
+  
+    // Loads all bookings and sets them to books
+    function loadBooks() {
+      API.getBooks()
+        .then(res => 
+          setBooks(res.data)
+        )
+        .catch(err => console.log(err));
+    };
+  
+    // Deletes a booking from the database with a given id, then reloads books from the db
+    function deleteBook(id) {
+      API.deleteBook(id)
+        .then(res => loadBooks())
+        .catch(err => console.log(err));
+    }
+  
+    // Handles updating component state when the user types into the input field
+    function handleInputChange(event) {
+      const { name, value } = event.target;
+      setFormObject({...formObject, [name]: value})
+    };
+  
+    // When the form is submitted, use the API.saveBook method to save the booking data
+    // Then reload bookings from the database
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      if (formObject.title && formObject.author) {
+        API.saveBook({
+          title: formObject.title,
+          author: formObject.author,
+          synopsis: formObject.synopsis
+        })
+          .then(res => loadBooks())
+          .catch(err => console.log(err));
+      }
+    };
     const items = [
       {
         src: mainimg,
@@ -95,54 +137,47 @@ const Dashboard = () => {
 
     return (
           <DashboardLayout>
-                      <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-    >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-      {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-    </Carousel>
+        <Carousel
+          activeIndex={activeIndex}
+          next={next}
+          previous={previous}
+        >
+          <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+          {slides}
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+        </Carousel>
               <Grid.Row>
-                <Header dividing size="huge" as="h1">
-                  {name}'s Dashboard
-                </Header>
-              </Grid.Row>
-              <Grid.Row textAlign="center">
-                <Grid.Column mobile={8} tablet={4} computer={4}>
-                  <Image
-                    centered
-                    circular
-                    size="large"
-                    src={profilePic}
-                  />
-                  <Label basic size="large">
-                    Profile Picture
-                  </Label>
-                </Grid.Column>
-                <Grid.Column mobile={8} tablet={4} computer={12}>
-                    {/* //User Image */}
-                  <Label basic size="large">
-                  <Icon name="mail"/>
-                    Bio
-                  </Label>
-                  <p style={{fontSize: "30px"}}>{email}</p>
-                </Grid.Column>
-                
-                
+              <form>
+              <Input
+                onChange={handleInputChange}
+                name="title"
+                placeholder="Booking Name (Required)"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="author"
+                placeholder="How Many People? (Required)"
+              />
+              <TextArea
+                onChange={handleInputChange}
+                name="synopsis"
+                placeholder="Dates Choosen (e.g. 01/01/2021-07/08/2021)"
+              />
+              <FormBtn
+                disabled={!(formObject.author && formObject.title)}
+                onClick={handleFormSubmit}
+              >
+                Submit Booking
+              </FormBtn>
+            </form> 
               </Grid.Row>
               <Divider section hidden />
               <Grid.Row>
                 <Header dividing size="huge" as="h1">
-                  Section title
+                  Booking Request
                 </Header>
               </Grid.Row>
-              <Grid.Row>
-                <p>Social Link</p>
-                    
-              </Grid.Row> 
             </DashboardLayout>
     )
 }
