@@ -2,9 +2,7 @@ import React, {useContext} from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
 import { StoreProvider } from "./utils/GlobalState";
-import FavoritesList from "./pages/FavoritesList";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignupPage";
 import Dashboard from "./pages/Dashboard";
@@ -25,7 +23,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route exact path="/managePost" component={ManagePost} />
             <Route exact path="/login" component={LoginPage} />
