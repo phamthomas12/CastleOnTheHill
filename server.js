@@ -40,16 +40,14 @@ if (process.env.NODE_ENV === "production") {
 // app.use(useRouter);
 app.use(routes);
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/castleon");
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://bootcamp-admin:karma345@cluster0.hj2wq.mongodb.net/castle?retryWrites=true&w=majority",
-// {
-// useNewUrlParser: true,
-// useUnifiedTopology: true,
-// useCreateIndex: true,
-// useFindAndModify: false
-// }
-// );
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/castleon",
+{
+useNewUrlParser: true,
+useUnifiedTopology: true,
+useCreateIndex: true,
+useFindAndModify: false
+}
+);
 
 // Start the API server
 app.listen(PORT, function() {
