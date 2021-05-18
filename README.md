@@ -3,7 +3,18 @@
 ## Description
 Castle On a Hill is the Pham families booking system of our holiday house down on the bayside of Melbourne. The idea came from my family currently having a holiday house that we plan to rent out, but however do not want to use such existing applications like Booking.com, Airbnb or Stayz.
 
-## User Story
+---
+| Table of Contents |
+|---|
+| [User Story](#UserStory) |
+| [Technology](#Technology) |
+| [Installation](#Installation) |
+| [Screenshots](#Screenshots) |
+| [Links](#Links) |
+| [Questions](#Questions) |
+---
+
+## UserStory
 
 As a new Holiday house owner, I would like to rent out my property without having to go through a third-party accommodation booking company so that I may receive 100% profit.
 
@@ -37,3 +48,15 @@ Signup: Clicking "Sign Up" on the login page will link you to this page to signu
 Dashboard: Once logged in successfully you will be pushed here to view previous request bookings and to submit your own request
 <img src="assets/screenshots/dashboard.PNG">
 <br>
+
+## Links
+Github Repository
+Github : https://github.com/phamthomas12/CastleOnTheHill/
+
+URL
+Deployed : https://polar-shelf-50510.herokuapp.com/dashboard/
+
+## Questions
+Please direct questions to the following email: phamthomas12@gmail.com
+
+Github: https://github.com/phamthomas12
