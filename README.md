@@ -25,9 +25,15 @@ Run npm install
 Run npm start
 
 ## Screenshots
-HomePage
-<img src="assets/screenshots/home.PNG">
+HomePage: the landing page that will appear when the webpage is visited or deployed
+<img src="assets/screenshots/homepage.PNG">
 <br>
-Login
+Login: Clicking the "Login To Start Booking" will link to the login page
 <img src="assets/screenshots/login.PNG">
+<br>
+Signup: Clicking "Sign Up" on the login page will link you to this page to signup
+<img src="assets/screenshots/signup.PNG">
+<br>
+Dashboard: Once logged in successfully you will be pushed here to view previous request bookings and to submit your own request
+<img src="assets/screenshots/dashboard.PNG">
 <br>
